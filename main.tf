@@ -11,6 +11,7 @@ locals {
 }
 
 resource "aws_cloudwatch_log_group" "main" {
+  region            = var.region
   name_prefix       = "${var.name}-${local.service_id}-"
   retention_in_days = var.retention_in_days
   kms_key_id        = var.kms_key_id
